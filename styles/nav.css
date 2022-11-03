@@ -1,0 +1,45 @@
+.navigation-wrapper {
+    height: 10px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;/*para que vaya en filas*/
+    justify-content: space-between;
+    /*para separar los contenidos, cada hijo*/
+    padding: 30px;
+    height: 30px;
+}
+
+.navigation-wrapper>.left-column {
+    height: 100%;
+    /*que me coja el 100% de los 30px del padre*/
+    flex-grow: 0;/*para que no crezca automaticamente*/
+}
+
+/*CONTENEDOR DE LA IMAGEN*/
+.navigation-wrapper>.left-column>.codepen-img {   
+    height: 100%;
+    /*tamaño del div que contiene la imagen, del contenedor, coge
+    el 100% del espacio disponible, 30px*/
+}
+
+/*ESTILO DE LA IMAGEN*/
+.codepen-img>img {
+    height: 100%;
+}
+
+.navigation-wrapper>.center-column {
+    display: grid;
+    /* justify-content: center;
+    align-items: center; */
+    flex-grow: 1;
+    padding-left: 60px;
+}
+
+.navigation-wrapper>.right-column {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    /*separando espacios en botones*/
+    flex-grow: 0;
+}
