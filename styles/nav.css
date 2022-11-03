@@ -43,3 +43,31 @@
     /*separando espacios en botones*/
     flex-grow: 0;
 }
+.center-wrapper{
+    background-color: grey;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;/*espacio entre las columnas*/
+}
+
+.center-wrapper-right-column>.center-img>img{
+    /*para que la img ocupe el tamaño del contenedor*/
+    width:100%;
+}
+
+.center-wrapper-left-column{
+    padding:30px;
+}
+
+.center-up-text{
+    font-size:2em;
+}
+
+.center-down-text{
+    font-size:1.5em;
+}
+
+.center-wrapper-right-column{
+    padding-top: 20px;
+}
