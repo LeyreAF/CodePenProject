@@ -5,19 +5,18 @@ html {
 
 /*ocupa el 100% de la altura del contenedor html*/
 body {
-    font-family:'Lucida Grande', sans-serif;
+    font-family: 'Lucida Grande', sans-serif;
     margin: 0px;
     display: flex;
     /*hacemos que body sea un contenedor flex*/
     flex-direction: column;
     /*para que se apilen uno debajo de otro*/
     height: 100%;
-    background-color: grey;
+    background-color: rgb(86, 82, 82);
 }
 
 /*éste es un elemento flex dentro del body*/
 .navigation-wrapper {
-    height: 10px;
     background-color: black;
     color: white;
     display: flex;
@@ -29,6 +28,8 @@ body {
     height: 30px;
     flex-grow: 0;
     /*para que no crezca de tamaño*/
+    flex-shrink: 0;
+    /*para que no decrezca de tamaño*/
 }
 
 .navigation-wrapper>.left-column {
@@ -55,50 +56,96 @@ body {
     /* justify-content: center;
     align-items: center; */
     flex-grow: 1;
-    padding-left: 60px;    
+    padding-left: 60px;
 }
 
-.navigation-wrapper>.center-column>.explore{
-    color:yellow;
-}
-.nav-link a{
-    color:white;
-    text-decoration: none;/*para quitar el subrayado del enlace*/
+.navigation-wrapper>.center-column>.explore {
+    color: rgb(210, 210, 18);
 }
 
-.nav-link{
-    display: inline-block;/*lo trata como bloque sin ocupar todo el espacio disponible*/
-    padding-right:10px;
+.nav-link a {
+    color: white;
+    text-decoration: none;
+    /*para quitar el subrayado del enlace*/
+}
+
+.nav-link {
+    display: inline-block;
+    /*lo trata como bloque sin ocupar todo el espacio disponible*/
+    padding-right: 10px;
     padding-top: 4px;
+    font-weight: 700;
+}
+
+.spark {
+    margin-left: 14px;
 }
 
 .navigation-wrapper>.right-column {
     display: flex;
     align-items: center;
-    column-gap: 20px;
+    column-gap: 40px;
     /*separando espacios en botones*/
     flex-grow: 0;
 }
 
+.create-btn {
+    background-color: rgb(86, 82, 82);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.create-btn i {
+    color: green;
+}
+
+.search-icon {
+    font-size: 2em;
+    color: rgb(86, 82, 82);
+}
+
+.login-btn {
+    background-color: rgb(86, 82, 82);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 4px;
+}
+
+.sign-up-btn {
+    background-color: rgb(86, 82, 82);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
 /*éste es un elemento flex dentro del body*/
 .center-wrapper {
-    background-color: rgb(21, 16, 16);
-    height: 500px;
+    background-color: rgb(66, 63, 63);
+    height: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.75fr 1.25fr;
     gap: 15px;
     /*espacio entre las columnas*/
     overflow: auto;
     /*para que no salga el scroll solo en el centro*/
 }
 
-.center-wrapper-right-column>.right-column-text{
-    color:white;
+.center-wrapper-right-column>.right-column-text {
+    color: white;
+    margin-top: 14px;
     margin-bottom: 5px;
 }
 
-.center-wrapper-right-column>.right-column-text>.code-project{
-    color:blue;
+.center-wrapper-right-column>.right-column-text>.code-project {
+    color: rgb(44, 113, 165);
+    font-weight: 700;
 }
 
 .center-wrapper-right-column>.center-img>img {
@@ -111,35 +158,36 @@ body {
 }
 
 .center-up-text {
-    font-size: 2em;
-    color: white;
+    font-size: 2.5em;
+    color: rgb(227, 218, 218);
     margin-bottom: 20px;
 }
 
-.center-up-text>.social-dev{
+.center-up-text>.social-dev {
     font-weight: 700;
+    color: white;
 }
 
 .center-down-text {
-    font-size: 1.5em;
-    color:white;
-    margin-bottom: 24px;
+    font-size: 2em;
+    color: rgb(227, 218, 218);
+    margin-bottom: 40px;
 }
 
-.sign-up-free-btn{
-    background-color: green;
-    color:black;
-    font-size: 20px;
+.sign-up-free-btn {
+    background-color: rgb(39, 135, 39);
+    color: black;
+    font-size: 30px;
     font-weight: 700;
     padding: 10px 20px;
-    border:1px solid black;
+    border: 1px solid black;
     border-radius: 2px;
     margin-right: 10px;
 }
 
-.learn-more-btn{
+.learn-more-btn {
     background-color: black;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
     color: white;
     padding: 10px 20px;
@@ -152,32 +200,43 @@ body {
 
 /*éste es un elemento flex dentro del body*/
 .footer-wrapper {
-    height: 25px;
-    background-color:rgb(21, 16, 16);
+    background-color: rgb(86, 82, 82);
     color: white;
     display: flex;
     flex-direction: row;
     /*para que vaya en filas*/
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     /* para separar los contenidos, cada hijo  */
-    align-items: center;    
-    height: 50px;
-    font-size: small;    
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-size: small;
     text-align: center;
+    vertical-align: middle;
     flex-grow: 0;
     /*para que no crezca de tamaño*/
+    flex-shrink: 0;
+    /*para que no decrezca de tamaño*/
 }
 
-.footer-wrapper>.teams,
-.footer-wrapper>.education,
-.footer-wrapper>.privacy,
-.footer-wrapper>.writing {
+.teams,
+.education,
+.privacy,
+.writing {
     flex: auto;
+    padding: 9px;
     /*para que no deje margen*/
-    border: 1px solid white;
+    font-size: 17px;
+    color: white;
+    border: 1px solid rgb(227, 218, 218);
 }
 
-
+.teams-word,
+.education-word,
+.privacy-word,
+.writing-word {
+    font-weight: 700;
+}
 
 /*éste es un elemento flex dentro del body*/
 .black-spacer {
@@ -186,4 +245,6 @@ body {
     background-color: black;
     flex-grow: 0;
     /*para que no crezca de tamaño*/
+    flex-shrink: 0;
+    /*para que no decrezca de tamaño*/
 }
