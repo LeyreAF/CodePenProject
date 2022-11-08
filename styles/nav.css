@@ -205,8 +205,6 @@ body {
     display: flex;
     flex-direction: row;
     /*para que vaya en filas*/
-    /*justify-content: space-between;*/
-    /* para separar los contenidos, cada hijo  */
     justify-content: center;
     align-items: center;
     height: 40px;
@@ -217,6 +215,10 @@ body {
     /*para que no crezca de tamaño*/
     flex-shrink: 0;
     /*para que no decrezca de tamaño*/
+    background-color: rgb(227, 218, 218);
+    gap: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
 .teams,
@@ -228,7 +230,10 @@ body {
     /*para que no deje margen*/
     font-size: 17px;
     color: white;
-    border: 1px solid rgb(227, 218, 218);
+    /*border: 1px solid rgb(227, 218, 218);*/
+    background-color: black;
+    white-space: nowrap;
+    /* para que no se ponga en dos lineas cuando no hay espacio para el texto*/
 }
 
 .teams-word,
@@ -245,6 +250,6 @@ body {
     background-color: black;
     flex-grow: 0;
     /*para que no crezca de tamaño*/
-    flex-shrink: 0;
-    /*para que no decrezca de tamaño*/
+    flex-shrink: 1;
+    /*para que decrezca de tamaño si es necesario */
 }
