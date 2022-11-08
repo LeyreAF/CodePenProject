@@ -1,23 +1,45 @@
+html {
+    height: 100%;
+    /*ocupa el 100%, para evitar scroll*/
+}
+
+/*ocupa el 100% de la altura del contenedor html*/
+body {
+    font-family:'Lucida Grande', sans-serif;
+    margin: 0px;
+    display: flex;
+    /*hacemos que body sea un contenedor flex*/
+    flex-direction: column;
+    /*para que se apilen uno debajo de otro*/
+    height: 100%;
+    background-color: grey;
+}
+
+/*éste es un elemento flex dentro del body*/
 .navigation-wrapper {
     height: 10px;
     background-color: black;
     color: white;
     display: flex;
-    flex-direction: row;/*para que vaya en filas*/
+    flex-direction: row;
+    /*para que vaya en filas*/
     justify-content: space-between;
     /*para separar los contenidos, cada hijo*/
     padding: 30px;
     height: 30px;
+    flex-grow: 0;
+    /*para que no crezca de tamaño*/
 }
 
 .navigation-wrapper>.left-column {
     height: 100%;
     /*que me coja el 100% de los 30px del padre*/
-    flex-grow: 0;/*para que no crezca automaticamente*/
+    flex-grow: 0;
+    /*para que no crezca automaticamente*/
 }
 
 /*CONTENEDOR DE LA IMAGEN*/
-.navigation-wrapper>.left-column>.codepen-img {   
+.navigation-wrapper>.left-column>.codepen-img {
     height: 100%;
     /*tamaño del div que contiene la imagen, del contenedor, coge
     el 100% del espacio disponible, 30px*/
@@ -33,7 +55,21 @@
     /* justify-content: center;
     align-items: center; */
     flex-grow: 1;
-    padding-left: 60px;
+    padding-left: 60px;    
+}
+
+.navigation-wrapper>.center-column>.explore{
+    color:yellow;
+}
+.nav-link a{
+    color:white;
+    text-decoration: none;/*para quitar el subrayado del enlace*/
+}
+
+.nav-link{
+    display: inline-block;/*lo trata como bloque sin ocupar todo el espacio disponible*/
+    padding-right:10px;
+    padding-top: 4px;
 }
 
 .navigation-wrapper>.right-column {
@@ -43,31 +79,111 @@
     /*separando espacios en botones*/
     flex-grow: 0;
 }
-.center-wrapper{
-    background-color: grey;
+
+/*éste es un elemento flex dentro del body*/
+.center-wrapper {
+    background-color: rgb(21, 16, 16);
     height: 500px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 15px;/*espacio entre las columnas*/
+    gap: 15px;
+    /*espacio entre las columnas*/
+    overflow: auto;
+    /*para que no salga el scroll solo en el centro*/
 }
 
-.center-wrapper-right-column>.center-img>img{
+.center-wrapper-right-column>.right-column-text{
+    color:white;
+    margin-bottom: 5px;
+}
+
+.center-wrapper-right-column>.right-column-text>.code-project{
+    color:blue;
+}
+
+.center-wrapper-right-column>.center-img>img {
     /*para que la img ocupe el tamaño del contenedor*/
-    width:100%;
+    width: 100%;
 }
 
-.center-wrapper-left-column{
-    padding:30px;
+.center-wrapper-left-column {
+    padding: 30px;
 }
 
-.center-up-text{
-    font-size:2em;
+.center-up-text {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
 }
 
-.center-down-text{
-    font-size:1.5em;
+.center-up-text>.social-dev{
+    font-weight: 700;
 }
 
-.center-wrapper-right-column{
+.center-down-text {
+    font-size: 1.5em;
+    color:white;
+    margin-bottom: 24px;
+}
+
+.sign-up-free-btn{
+    background-color: green;
+    color:black;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border:1px solid black;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.learn-more-btn{
+    background-color: black;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 10px 20px;
+}
+
+.center-wrapper-right-column {
     padding-top: 20px;
+}
+
+
+/*éste es un elemento flex dentro del body*/
+.footer-wrapper {
+    height: 25px;
+    background-color:rgb(21, 16, 16);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    /*para que vaya en filas*/
+    justify-content: space-between;
+    /* para separar los contenidos, cada hijo  */
+    align-items: center;    
+    height: 50px;
+    font-size: small;    
+    text-align: center;
+    flex-grow: 0;
+    /*para que no crezca de tamaño*/
+}
+
+.footer-wrapper>.teams,
+.footer-wrapper>.education,
+.footer-wrapper>.privacy,
+.footer-wrapper>.writing {
+    flex: auto;
+    /*para que no deje margen*/
+    border: 1px solid white;
+}
+
+
+
+/*éste es un elemento flex dentro del body*/
+.black-spacer {
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    flex-grow: 0;
+    /*para que no crezca de tamaño*/
 }
